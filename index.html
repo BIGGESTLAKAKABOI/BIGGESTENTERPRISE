@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BIGGEST ENTERPRISE - I Build Websites</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Arial,sans-serif}
+body{background:#0a1526;color:#fff;transition:0.3s}body.light{background:#f1f5f9;color:#0f172a}
+.top{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:#0d1b2e;border-bottom:1px solid #1e3a5f}body.light .top{background:#fff;border-color:#e2e8f0}
+.logo{color:#f59e0b;font-weight:900;line-height:1}.logo small{color:#94a3b8;font-size:10px;display:block;font-weight:400;margin-top:3px}
+.btn{border:none;border-radius:10px;padding:11px 16px;font-weight:800;cursor:pointer}.btn-orange{background:#f59e0b;color:#fff}.btn-gold{background:#f59e0b;color:#000;width:100%;padding:14px}.btn-green{background:#16a34a;color:#fff;width:100%;padding:14px}
+.hero{padding:36px 16px 20px;text-align:center;background:radial-gradient(600px 300px at 50% 0,#1e3a5f,transparent)}.hero h1{font-size:34px;line-height:1.15}.hero h1 span{color:#f59e0b}.hero p{color:#94a3b8;font-size:13px;line-height:1.7;margin:12px 0}
+.payBox{background:#122b00;border:1px solid #4d7c0f;color:#d9f99d;padding:16px;border-radius:14px;margin:14px 16px;text-align:center;line-height:1.8;font-size:14px}body.light .payBox{background:#ecfdf5;color:#14532d;border-color:#bbf7d0}
+.card{background:#12233a;border:1px solid #1e3a5f;border-radius:16px;padding:18px;margin:12px 16px}body.light .card{background:#fff;border-color:#e2e8f0}.card h3{color:#f5a623;margin:4px 0}.price{font-size:26px;font-weight:900}
+.miniGrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:4px 16px}.mini{background:#12233a;border:1px solid #1e3a5f;border-radius:14px;padding:14px;text-align:center}body.light .mini{background:#fff;border-color:#e2e8f0}.mini b{font-size:19px}.mini p{font-size:11px;color:#94a3b8;margin-top:3px}
+input,select{width:100%;padding:13px;margin:7px 0;border-radius:10px;border:1px solid #2a3f5f;background:#0d1b2e;color:#fff;outline:none}body.light input,body.light select{background:#fff;color:#111;border-color:#cbd5e1}
+.badge{font-size:11px;font-weight:800;padding:5px 9px;border-radius:20px;background:#dcfce7;color:#166534}.badge.hot{background:#fef3c7;color:#92400e}
+#adminPage{display:none;min-height:100vh}.layout{display:flex;min-height:100vh}.sidebar{width:250px;background:#0d1b2e;border-right:1px solid #1e3a5f;padding:18px 12px;position:fixed;left:0;top:0;bottom:0;overflow-y:auto}body.light .sidebar{background:#fff;border-color:#e2e8f0}.main{margin-left:250px;flex:1;padding:18px}@media(max-width:768px){.sidebar{transform:translateX(-100%);transition:0.3s;z-index:99;width:260px}.sidebar.open{transform:translateX(0)}.main{margin-left:0}}
+.menuItem{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-radius:10px;margin:5px 0;color:#94a3b8;cursor:pointer;font-size:14px;font-weight:600}.menuItem.active{background:#2563eb;color:#fff}
+.sectionTitle{font-size:11px;letter-spacing:1px;color:#64748b;margin:18px 8px 6px;font-weight:800}
+.statGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}@media(min-width:700px){.statGrid{grid-template-columns:1fr 1fr 1fr 1fr}}
+.stat{background:#162b46;border:1px solid #243d5f;border-radius:14px;padding:18px;display:flex;justify-content:space-between;align-items:center}body.light .stat{background:#fff;border-color:#e2e8f0}.stat b{font-size:26px;display:block}.stat p{font-size:12px;color:#94a3b8}
+.iconCircle{width:48px;height:48px;border-radius:50%;background:#2563eb;display:flex;align-items:center;justify-content:center;font-size:20px}
+.tabPage{display:none}.tabPage.show{display:block}#floatBtn{position:fixed;bottom:18px;right:18px;z-index:100;background:#f59e0b;color:#000;border:none;padding:13px 18px;border-radius:30px;font-weight:900;cursor:pointer}
+.userRow{background:#0d1b2e;border:1px solid #1e3a5f;border-radius:10px;padding:11px;margin:7px 0;font-size:13px;line-height:1.5}body.light .userRow{background:#f8fafc;border-color:#e2e8f0}
+</style>
+</head>
+<body>
+<button id="floatBtn" onclick="openAdmin()">⚙️ DASHBOARD</button>
+<div id="storePage">
+<div class="top"><div class="logo">💰 BIGGEST ENTERPRISE<small>Web Design Company</small></div><button class="btn btn-orange" onclick="goWA('Hello I want website')">Chat Me</button></div>
+<div class="hero">
+<p style="color:#f59e0b;font-size:11px;letter-spacing:2px;font-weight:800">WE HAVE 24/7 SUPPORT TEAM • SINCE 2025 • REAL ONLINE SYSTEM</p>
+<h1>I Build Websites<br><span>Without Error</span></h1>
+<p>10 neat designs, from lowest to highest.<br>Very clean, fast, no bug. Pay to OPAY, I build am in 1-2 days.</p>
+<button class="btn btn-gold" style="max-width:340px" onclick="document.getElementById('plans').scrollIntoView({behavior:'smooth'})">SEE 10 DESIGNS & PRICES 👇</button>
+</div>
+<div class="payBox">💰 <b>HOW TO PAY</b><br>Bank: <b style="color:#fff;font-size:17px" id="payBankText">OPAY - 8072428174</b><br>WhatsApp: <b style="color:#fff" id="payWaText">+234 704 632 7680</b><br><span style="font-size:12px;opacity:.8">Pay → Screenshot → Chat me, I go build am sharp!</span></div>
+<div class="miniGrid"><div class="mini"><b id="totalTop">0</b><p>Total Join • Real</p></div><div class="mini"><b>10</b><p>Designs</p></div><div class="mini"><b>24/7</b><p>Support</p></div></div>
+<div id="plans" style="text-align:center;padding:22px 0 6px"><h2>MY 10 WEBSITES<br><span style="color:#f59e0b">LOWEST TO HIGHEST PRICE</span></h2></div>
+<div id="list"></div>
+<div class="card" style="border-color:#f59e0b">
+<h2 style="text-align:center">JOIN / ORDER NOW</h2>
+<p style="text-align:center;color:#94a3b8;font-size:13px">Fill am, e go show for my dashboard for real</p>
+<input id="joinName" placeholder="Your Name"><input id="joinPhone" placeholder="Your Whatsapp Number"><select id="joinPlan"></select>
+<button class="btn btn-green" onclick="joinNow()">ORDER NOW</button>
+<button class="btn btn-gold" style="margin-top:8px" onclick="goWA('Hello BIGGEST ENTERPRISE I want website')">CHAT WHATSAPP 💬</button>
+</div>
+<div style="text-align:center;padding:10px 20px 90px;color:#64748b;font-size:12px" id="footerText">BIGGEST ENTERPRISE<br>WhatsApp +234 704 632 7680 • OPAY 8072428174</div>
+</div>
+<div id="adminPage"><div class="layout">
+<div class="sidebar" id="sideBar">
+<div style="display:flex;justify-content:space-between;align-items:center;padding:6px 8px"><div class="logo">💰 BIGGEST ENTERPRISE<small>Admin Panel</small></div><button onclick="closeAdmin()" style="background:#1e293b;color:#fff;border:none;padding:7px 11px;border-radius:8px">✕</button></div>
+<div class="menuItem active" onclick="showTab('tabDash',this)">🏠 Dashboard <span>›</span></div>
+<div class="sectionTitle">USER MANAGEMENT</div>
+<div class="menuItem" onclick="showTab('tabKYC',this)">📝 KYC Form <span>›</span></div>
+<div class="menuItem" onclick="showTab('tabRole',this)">👥 Manage Role <span>›</span></div>
+<div class="menuItem" onclick="showTab('tabUsers',this)">👤 All Users <span id="countBadge" style="background:#f59e0b;color:#000;padding:2px 7px;border-radius:10px;font-size:11px">0</span></div>
+<div class="sectionTitle">MANAGE PLAN</div>
+<div class="menuItem" onclick="showTab('tabSchedule',this)">🕒 Schedule <span>›</span></div>
+<div class="menuItem" onclick="showTab('tabPlan',this)">📦 Plan (10 Designs) <span>›</span></div>
+<div class="sectionTitle">ALL TRANSACTION</div>
+<div class="menuItem" onclick="showTab('tabTrans',this)">📄 Transaction Log <span>›</span></div>
+<div class="menuItem" onclick="showTab('tabSettings',this)">⚙️ Settings - Change Price & Number <span>›</span></div>
+<div style="margin-top:20px;padding:12px;background:#12233a;border-radius:12px;font-size:12px;line-height:1.7" id="sideInfo"></div>
+</div>
+<div class="main">
+<div style="display:flex;justify-content:space-between;align-items:center"><div><h2>Dashboard</h2><p style="color:#94a3b8;font-size:12px">Dashboard / Overview • Real Backend</p></div><button onclick="document.getElementById('sideBar').classList.toggle('open')" style="padding:10px 14px;background:#2563eb;color:#fff;border:none;border-radius:8px">☰ Menu</button></div>
+<div id="loginBox" style="max-width:420px;margin:25px auto;background:#162b46;border:1px solid #243d5f;padding:26px;border-radius:16px;text-align:center">
+<h3 style="color:#f59e0b">Admin Login</h3><p style="color:#94a3b8;font-size:13px;margin:6px 0">Enter your admin password</p>
+<input type="password" id="pass" placeholder="Enter password"><button class="btn btn-gold" onclick="doLogin()">Enter Dashboard →</button>
+</div>
+<div id="dashContent" style="display:none">
+<div id="tabDash" class="tabPage show">
+<div class="statGrid">
+<div class="stat"><div><p>Total Users</p><b id="stTotal">0</b></div><div class="iconCircle">👥</div></div>
+<div class="stat"><div><p>Active Users</p><b id="stActive">0</b></div><div class="iconCircle" style="background:#16a34a">👤</div></div>
+<div class="stat"><div><p>Today Join</p><b id="stToday">0</b></div><div class="iconCircle" style="background:#f59e0b">🆕</div></div>
+<div class="stat"><div><p>Total Orders</p><b id="stOrders">0</b></div><div class="iconCircle" style="background:#7c3aed">💰</div></div>
+</div>
+<div class="card" style="margin:14px 0"><b style="color:#f59e0b">Recent Join Users (Real)</b><div id="recentUsers"></div></div>
+<div class="card" style="margin:14px 0"><b style="color:#f59e0b">Today Transaction</b><div id="todayTrans"></div></div>
+</div>
+<div id="tabKYC" class="tabPage"><div class="card" style="margin:0"><h3>KYC Form</h3><input placeholder="Full Name"><input placeholder="OPAY Account Number"><button class="btn btn-gold" onclick="alert('KYC saved')">Submit KYC</button></div></div>
+<div id="tabRole" class="tabPage"><div class="card" style="margin:0"><h3>Manage Role</h3><div class="userRow">Admin - BIGGEST ENTERPRISE - Full Access</div><div class="userRow">Support - Can view users</div><div class="userRow">Client - Can order only</div></div></div>
+<div id="tabUsers" class="tabPage"><div class="card" style="margin:0"><h3>All Users</h3><div id="allUsers"></div></div></div>
+<div id="tabSchedule" class="tabPage"><div class="card" style="margin:0"><h3>Schedule</h3><p style="color:#94a3b8;font-size:13px;line-height:1.8">Monday - Friday: 8am - 11pm<br>Saturday - Sunday: 24/7<br>Delivery: 1-2 days</p></div></div>
+<div id="tabPlan" class="tabPage"><div class="card" style="margin:0"><h3>Plan - 10 Designs</h3><div id="planList"></div></div></div>
+<div id="tabTrans" class="tabPage"><div class="card" style="margin:0"><h3>Transaction Log</h3><div id="transList"></div></div></div>
+<div id="tabSettings" class="tabPage"><div class="card" style="margin:0">
+<h3>Settings - Change Price & Number For Everybody</h3>
+<label style="font-size:12px;color:#94a3b8">OPAY NUMBER</label><input id="setBank" value="8072428174">
+<label style="font-size:12px;color:#94a3b8">WHATSAPP NUMBER</label><input id="setWa" value="2347046327680">
+<hr style="border-color:#1e3a5f;margin:14px 0"><h3 style="color:#f5a623">Change 10 Prices</h3><div id="priceEdit"></div>
+<hr style="border-color:#1e3a5f;margin:14px 0"><h3 style="color:#f5a623">Change Admin Password (Hidden)</h3>
+<label style="font-size:12px;color:#94a3b8">Old Password</label><input type="password" id="oldPass" placeholder="Enter old password">
+<label style="font-size:12px;color:#94a3b8">New Password</label><input type="password" id="newPass" placeholder="Enter new password">
+<button class="btn btn-gold" onclick="changePass()">Change Password</button>
+<hr style="border-color:#1e3a5f;margin:14px 0"><button class="btn btn-green" onclick="saveSettings()">SAVE ALL SETTINGS FOR EVERYBODY</button>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+let DEFAULT_NAMES=["Advert / Link-in-Bio Page","Lagos Life Game Store","Business / Portfolio Website","Blog / News Website","Real Estate / Lodge Listing","Mini E-commerce Shop","School / Church Website","Booking / Hotel / Travel","Company Website + Dashboard","Full Custom Web App"];
+let DEFAULT_DESCS=["1 page, picture, WhatsApp button, for status/TikTok","Full store, packages, admin to change price","For your business, pictures, contact form, very neat","Post news, blog, read and comment, neat","Houses, land, lodge with pictures, WhatsApp order","Cart, products, WhatsApp checkout","School info, fees, church programs, join form","Booking form, rooms, dates, WhatsApp confirm","InvestPro style dashboard, total users, transaction log, dark/light","Login, dashboard, real join system, 99% perfect"];
+let SET={bank:'8072428174',wa:'2347046327680',prices:[5000,10000,15000,18000,20000,25000,30000,35000,50000,80000]};
+let ADMIN_PASS='';
+function fmt(n){return '₦'+Number(n).toLocaleString()}
+function getSites(){return DEFAULT_NAMES.map((n,i)=>[n,SET.prices[i],DEFAULT_DESCS[i]])}
+async function loadSettings(){
+try{let r=await fetch('/api/settings'); let j=await r.json(); if(j.bank) SET=j; }catch(e){}
+renderStore();
+try{let r=await fetch('/api/stats'); let j=await r.json(); document.getElementById('totalTop').innerText=j.total||0; }catch(e){}
+}
+function renderStore(){
+let sites=getSites();
+document.getElementById('list').innerHTML=sites.map((s,i)=>`<div class="card"><div style="display:flex;justify-content:space-between"><small class="badge ${i>1?'hot':''}">NO.${i+1}</small><small>⭐⭐⭐⭐⭐</small></div><h3>${s[0]}</h3><div class="price">${fmt(s[1])}</div><p style="color:#94a3b8;font-size:13px">${s[2]}</p><button class="btn btn-gold" onclick="order('${s[0]} ${fmt(s[1])}')">ORDER THIS - ${fmt(s[1])} →</button></div>`).join('');
+document.getElementById('joinPlan').innerHTML=sites.map((s,i)=>`<option>${i+1}. ${s[0]} - ${fmt(s[1])}</option>`).join('');
+document.getElementById('payBankText').innerText='OPAY - '+SET.bank;
+document.getElementById('payWaText').innerText='+'+SET.wa;
+document.getElementById('footerText').innerHTML='BIGGEST ENTERPRISE<br>WhatsApp +'+SET.wa+' • OPAY '+SET.bank;
+document.getElementById('sideInfo').innerHTML=`OPAY: <b>${SET.bank}</b><br>WhatsApp: <b>+${SET.wa}</b><br><button onclick="toggleMode()" style="margin-top:10px;width:100%;padding:10px;background:#2563eb;color:#fff;border:none;border-radius:8px;font-weight:700">🌞 / 🌙 Light / Dark</button><button onclick="logoutAdmin()" style="margin-top:8px;width:100%;padding:10px;background:#ef4444;color:#fff;border:none;border-radius:8px;font-weight:700">Logout</button>`;
+}
+function goWA(t){window.open('https://wa.me/'+SET.wa+'?text='+encodeURIComponent(t),'_blank')}
+async function joinNow(){
+let n=document.getElementById('joinName').value.trim()||'No name';
+let p=document.getElementById('joinPhone').value.trim()||'No phone';
+let plan=document.getElementById('joinPlan').value;
+await fetch('/api/join',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:n,phone:p,plan})});
+loadSettings();
+goWA('Hello BIGGEST ENTERPRISE! I want website. Name:'+n+' Phone:'+p+' Plan:'+plan+' I go pay to OPAY '+SET.bank);
+}
+async function order(plan){
+await fetch('/api/order',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({plan})});
+goWA('Hello! I want '+plan+' website. How I go pay to OPAY '+SET.bank+'?');
+}
+function openAdmin(){document.getElementById('storePage').style.display='none';document.getElementById('adminPage').style.display='block';document.getElementById('floatBtn').style.display='none';window.scrollTo(0,0)}
+function closeAdmin(){document.getElementById('adminPage').style.display='none';document.getElementById('storePage').style.display='block';document.getElementById('floatBtn').style.display='block'}
+function showTab(id,el){document.querySelectorAll('.tabPage').forEach(t=>t.classList.remove('show'));document.getElementById(id).classList.add('show');document.querySelectorAll('.menuItem').forEach(m=>m.classList.remove('active'));if(el)el.classList.add('active');document.getElementById('sideBar').classList.remove('open')}
+async function doLogin(){
+let pass=document.getElementById('pass').value;
+let r=await fetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({password:pass})});
+let j=await r.json();
+if(j.ok){
+ADMIN_PASS=pass;
+document.getElementById('loginBox').style.display='none';document.getElementById('dashContent').style.display='block';
+SET=j.settings;
+let users=j.users, orders=j.orders;
+let today=new Date().toDateString();
+document.getElementById('stTotal').innerText=users.length;
+document.getElementById('stActive').innerText=users.length;
+document.getElementById('stToday').innerText=users.filter(x=>x.date===today).length;
+document.getElementById('stOrders').innerText=orders.length;
+document.getElementById('countBadge').innerText=users.length;
+document.getElementById('recentUsers').innerHTML=users.length?users.slice(-5).reverse().map(x=>`<div class="userRow"><b>${x.name}</b> - ${x.phone}<br>${x.plan} • ${x.time}</div>`).join(''):'No users yet';
+document.getElementById('allUsers').innerHTML=users.length?users.map(x=>`<div class="userRow"><b>${x.name}</b> - ${x.phone}<br>${x.plan} • ${x.time}</div>`).join(''):'No users yet';
+document.getElementById('todayTrans').innerHTML=orders.length?orders.slice(-5).reverse().map(x=>`<div class="userRow">${x.plan} • ${x.time}</div>`).join(''):'No transaction yet';
+document.getElementById('transList').innerHTML=orders.length?orders.map(x=>`<div class="userRow">${x.plan} - ${x.time} - OPAY ${SET.bank}</div>`).join(''):'No transaction yet';
+document.getElementById('planList').innerHTML=getSites().map(s=>`<div class="userRow"><b>${s[0]}</b> - ${fmt(s[1])}</div>`).join('');
+document.getElementById('priceEdit').innerHTML=getSites().map((s,i)=>`<label style="font-size:12px;color:#94a3b8">${i+1}. ${s[0]}</label><input type="number" id="price_${i}" value="${s[1]}">`).join('');
+document.getElementById('setBank').value=SET.bank;
+document.getElementById('setWa').value=SET.wa;
+}else alert('Wrong password');
+}
+function logoutAdmin(){document.getElementById('dashContent').style.display='none';document.getElementById('loginBox').style.display='block';document.getElementById('pass').value='';ADMIN_PASS='';}
+async function changePass(){
+let oldP=document.getElementById('oldPass').value; let newP=document.getElementById('newPass').value;
+let r=await fetch('/api/change-pass',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({oldPass:oldP,newPass:newP})});
+let j=await r.json();
+if(j.ok){alert('Password changed! Nobody go see am.');ADMIN_PASS=newP;document.getElementById('oldPass').value='';document.getElementById('newPass').value='';}
+else alert('Old password no correct');
+}
+async function saveSettings(){
+let bank=document.getElementById('setBank').value.trim();
+let wa=document.getElementById('setWa').value.trim();
+let prices=getSites().map((s,i)=>{let v=document.getElementById('price_'+i); return v?parseInt(v.value)||s[1]:s[1]});
+let r=await fetch('/api/save-settings',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({password:ADMIN_PASS,bank,wa,prices})});
+let j=await r.json();
+if(j.ok){SET=j.settings;renderStore();alert('Saved for everybody! OPAY: '+bank+' WhatsApp: +'+wa);}
+else alert('Session expire, login again');
+}
+function toggleMode(){document.body.classList.toggle('light')}
+loadSettings();
+</script>
+</body>
+  </html>
